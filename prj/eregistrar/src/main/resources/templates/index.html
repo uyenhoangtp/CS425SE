@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>eRegistrar</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #eef2f7;
+            color: #1a1a1a;
+        }
+        header {
+            background: #283593;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        main {
+            display: grid;
+            gap: 20px;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 th:text="${pageTitle}">eRegistrar Home</h1>
+        <p>Build and manage registration workflows for courses, workshops, and campus services.</p>
+    </header>
+    <main>
+        <section class="card">
+            <h2>Welcome to eRegistrar</h2>
+            <p>This sample app demonstrates a simple Spring Boot web application with a clean landing page.</p>
+        </section>
+        <section class="card">
+            <h3>Features</h3>
+            <ul>
+                <li>Homepage built with Spring Web MVC</li>
+                <li>Thymeleaf template rendering</li>
+                <li>Designed for fast changes with DevTools</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>eLibrary</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+    <header>
+        <h1 th:text="${bannerText}">elibrary - Your digital library</h1>
+        <p>Welcome to a modern online reading experience. Explore books, save favorites, and learn something new.</p>
+    </header>
+    <main>
+        <section>
+            <h2>Featured Collections</h2>
+            <ul>
+                <li>Software Engineering</li>
+                <li>Web Development</li>
+                <li>Data Science</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

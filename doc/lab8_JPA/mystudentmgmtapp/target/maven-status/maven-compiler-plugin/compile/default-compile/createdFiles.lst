@@ -1,0 +1,5 @@
+edu/mum/cs/cs425/studentmgmt/model/Student.class
+edu/mum/cs/cs425/studentmgmt/model/Transcript.class
+edu/mum/cs/cs425/studentmgmt/repository/StudentRepository.class
+edu/mum/cs/cs425/studentmgmt/StudentMgmtApp.class
+edu/mum/cs/cs425/studentmgmt/model/Classroom.class

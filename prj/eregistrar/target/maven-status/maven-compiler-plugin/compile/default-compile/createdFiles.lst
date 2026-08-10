@@ -1,2 +1,6 @@
+com/example/eregistrar/repository/StudentRepository.class
+com/example/eregistrar/controller/StudentController.class
+com/example/eregistrar/model/Student.class
 com/example/eregistrar/EregistrarApplication.class
+com/example/eregistrar/StudentDataLoader.class
 com/example/eregistrar/controller/HomeController.class

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>eRegistrar - Student Form</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+<nav>
+    <div class="nav-brand">eRegistrar</div>
+    <ul class="nav-menu">
+        <li><a th:href="@{/home}">Home</a></li>
+        <li><a th:href="@{/students/list}">Students</a></li>
+        <li><a th:href="@{/students/new}">Register Student</a></li>
+    </ul>
+</nav>
+<div class="container">
+    <div class="form-card">
+        <h2 th:text="${student.studentId == null} ? 'Register New Student' : 'Edit Student'"></h2>
+        <form th:action="@{/students/save}" th:object="${student}" method="post">
+            <input type="hidden" th:field="*{studentId}" />
+            <div class="form-group">
+                <label for="studentNumber">Student Number</label>
+                <input type="text" id="studentNumber" th:field="*{studentNumber}" placeholder="000-61-0001" required />
+            </div>
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" th:field="*{firstName}" placeholder="Anna" required />
+            </div>
+            <div class="form-group">
+                <label for="middleName">Middle Name</label>
+                <input type="text" id="middleName" th:field="*{middleName}" placeholder="Lynn" />
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" th:field="*{lastName}" placeholder="Smith" required />
+            </div>
+            <div class="form-group">
+                <label for="cgpa">CGPA</label>
+                <input type="number" step="0.01" min="0" max="4" id="cgpa" th:field="*{cgpa}" placeholder="3.78" />
+            </div>
+            <div class="form-group">
+                <label for="enrollmentDate">Enrollment Date</label>
+                <input type="date" id="enrollmentDate" th:field="*{enrollmentDate}" required />
+            </div>
+            <div class="form-group">
+                <label>International Student</label>
+                <select th:field="*{international}" required>
+                    <option th:value="true" th:selected="${student.international == true}">Yes</option>
+                    <option th:value="false" th:selected="${student.international == false}">No</option>
+                </select>
+            </div>
+            <div class="form-actions">
+                <button class="button" type="submit">Save</button>
+                <a th:href="@{/students/list}" class="secondary-link">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

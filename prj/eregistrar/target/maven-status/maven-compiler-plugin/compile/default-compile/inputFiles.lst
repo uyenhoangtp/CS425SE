@@ -1,2 +1,6 @@
 /Users/uyenhoang/Documents/MIU/SE/src/CS425SE/prj/eregistrar/src/main/java/com/example/eregistrar/controller/HomeController.java
+/Users/uyenhoang/Documents/MIU/SE/src/CS425SE/prj/eregistrar/src/main/java/com/example/eregistrar/controller/StudentController.java
 /Users/uyenhoang/Documents/MIU/SE/src/CS425SE/prj/eregistrar/src/main/java/com/example/eregistrar/EregistrarApplication.java
+/Users/uyenhoang/Documents/MIU/SE/src/CS425SE/prj/eregistrar/src/main/java/com/example/eregistrar/StudentDataLoader.java
+/Users/uyenhoang/Documents/MIU/SE/src/CS425SE/prj/eregistrar/src/main/java/com/example/eregistrar/model/Student.java
+/Users/uyenhoang/Documents/MIU/SE/src/CS425SE/prj/eregistrar/src/main/java/com/example/eregistrar/repository/StudentRepository.java

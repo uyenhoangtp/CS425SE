@@ -1,4 +1,4 @@
-# eRegistrar
+# RentaCar
 
 UI screenshots should be saved in the `screenshots` folder located at:
 

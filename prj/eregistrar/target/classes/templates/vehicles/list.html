@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>RentaCar - Vehicles</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+<nav>
+    <div class="nav-brand">RentaCar</div>
+    <ul class="nav-menu">
+        <li><a th:href="@{/home}">Home</a></li>
+        <li><a th:href="@{/customers/list}">Customers</a></li>
+        <li><a th:href="@{/vehicles/list}">Vehicles</a></li>
+        <li><a th:href="@{/reservations/list}">Reservations</a></li>
+        <li><a th:href="@{/payments/list}">Payments</a></li>
+    </ul>
+</nav>
+<div class="container">
+    <div class="table-wrapper">
+        <div class="page-header">
+            <h2>Vehicle Fleet</h2>
+            <a th:href="@{/vehicles/new}" class="button">Add Vehicle</a>
+        </div>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Plate</th>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Type</th>
+                <th>Daily Rate</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="vehicle : ${vehicles}">
+                <td th:text="${vehicle.id}"></td>
+                <td th:text="${vehicle.plateNumber}"></td>
+                <td th:text="${vehicle.make}"></td>
+                <td th:text="${vehicle.model}"></td>
+                <td th:text="${vehicle.vehicleType}"></td>
+                <td th:text="${'$' + vehicle.dailyRate}"></td>
+                <td th:text="${vehicle.status}"></td>
+                <td>
+                    <a th:href="@{/vehicles/edit/{id}(id=${vehicle.id})}">Edit</a> |
+                    <a th:href="@{/vehicles/delete/{id}(id=${vehicle.id})}" class="delete-link">Delete</a>
+                </td>
+            </tr>
+            <tr th:if="${vehicles.empty}">
+                <td colspan="8">No vehicles found.</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

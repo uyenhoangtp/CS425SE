@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>RentaCar - Payments</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+<nav>
+    <div class="nav-brand">RentaCar</div>
+    <ul class="nav-menu">
+        <li><a th:href="@{/home}">Home</a></li>
+        <li><a th:href="@{/customers/list}">Customers</a></li>
+        <li><a th:href="@{/vehicles/list}">Vehicles</a></li>
+        <li><a th:href="@{/reservations/list}">Reservations</a></li>
+        <li><a th:href="@{/payments/list}">Payments</a></li>
+    </ul>
+</nav>
+<div class="container">
+    <div class="table-wrapper">
+        <div class="page-header">
+            <h2>Payment Records</h2>
+        </div>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Reservation</th>
+                <th>Amount</th>
+                <th>Method</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="payment : ${payments}">
+                <td th:text="${payment.id}"></td>
+                <td th:text="${payment.reservation.id}"></td>
+                <td th:text="${'$' + payment.amount}"></td>
+                <td th:text="${payment.paymentMethod}"></td>
+                <td th:text="${payment.status}"></td>
+            </tr>
+            <tr th:if="${payments.empty}">
+                <td colspan="5">No payment records found.</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

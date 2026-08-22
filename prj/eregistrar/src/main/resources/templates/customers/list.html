@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>RentaCar - Customers</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+<nav>
+    <div class="nav-brand">RentaCar</div>
+    <ul class="nav-menu">
+        <li><a th:href="@{/home}">Home</a></li>
+        <li><a th:href="@{/customers/list}">Customers</a></li>
+        <li><a th:href="@{/vehicles/list}">Vehicles</a></li>
+        <li><a th:href="@{/reservations/list}">Reservations</a></li>
+        <li><a th:href="@{/payments/list}">Payments</a></li>
+    </ul>
+</nav>
+<div class="container">
+    <div class="table-wrapper">
+        <div class="page-header">
+            <h2>Customer List</h2>
+            <a th:href="@{/customers/new}" class="button">Add Customer</a>
+        </div>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>License</th>
+                <th>Address</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="customer : ${customers}">
+                <td th:text="${customer.id}"></td>
+                <td th:text="${customer.firstName + ' ' + customer.lastName}"></td>
+                <td th:text="${customer.email}"></td>
+                <td th:text="${customer.phone}"></td>
+                <td th:text="${customer.licenseNumber}"></td>
+                <td th:text="${customer.address}"></td>
+                <td>
+                    <a th:href="@{/customers/edit/{id}(id=${customer.id})}">Edit</a> |
+                    <a th:href="@{/customers/delete/{id}(id=${customer.id})}" class="delete-link">Delete</a>
+                </td>
+            </tr>
+            <tr th:if="${customers.empty}">
+                <td colspan="7">No customers found.</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

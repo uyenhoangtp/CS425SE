@@ -2,25 +2,43 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
-    <title>eRegistrar - Home</title>
+    <title>RentaCar - Dashboard</title>
     <link rel="stylesheet" th:href="@{/css/styles.css}" />
 </head>
 <body>
 <nav>
-    <div class="nav-brand">eRegistrar</div>
+    <div class="nav-brand">RentaCar</div>
     <ul class="nav-menu">
         <li><a th:href="@{/home}">Home</a></li>
-        <li><a th:href="@{/students/list}">Students</a></li>
-        <li><a th:href="@{/students/new}">Register Student</a></li>
+        <li><a th:href="@{/customers/list}">Customers</a></li>
+        <li><a th:href="@{/vehicles/list}">Vehicles</a></li>
+        <li><a th:href="@{/reservations/list}">Reservations</a></li>
+        <li><a th:href="@{/payments/list}">Payments</a></li>
     </ul>
 </nav>
 <div class="container">
     <div class="hero">
-        <h1>Welcome to eRegistrar</h1>
-        <p>Manage student registration for the university with ease.</p>
+        <h1>RentaCar Management Dashboard</h1>
+        <p>Manage customers, vehicles, reservations, and payments in one simple application.</p>
         <div class="hero-links">
-            <a th:href="@{/students/list}" class="button">View Students</a>
-            <a th:href="@{/students/new}" class="button button-secondary">Register Student</a>
+            <a th:href="@{/customers/list}" class="button">Customers</a>
+            <a th:href="@{/vehicles/list}" class="button button-secondary">Vehicles</a>
+            <a th:href="@{/reservations/list}" class="button">Reservations</a>
+        </div>
+    </div>
+
+    <div class="stats-grid">
+        <div class="stat-card">
+            <h3>Customers</h3>
+            <p th:text="${customersCount}">0</p>
+        </div>
+        <div class="stat-card">
+            <h3>Vehicles</h3>
+            <p th:text="${vehiclesCount}">0</p>
+        </div>
+        <div class="stat-card">
+            <h3>Reservations</h3>
+            <p th:text="${reservationsCount}">0</p>
         </div>
     </div>
 </div>

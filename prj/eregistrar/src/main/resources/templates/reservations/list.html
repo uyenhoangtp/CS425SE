@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>RentaCar - Reservations</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+<nav>
+    <div class="nav-brand">RentaCar</div>
+    <ul class="nav-menu">
+        <li><a th:href="@{/home}">Home</a></li>
+        <li><a th:href="@{/customers/list}">Customers</a></li>
+        <li><a th:href="@{/vehicles/list}">Vehicles</a></li>
+        <li><a th:href="@{/reservations/list}">Reservations</a></li>
+        <li><a th:href="@{/payments/list}">Payments</a></li>
+    </ul>
+</nav>
+<div class="container">
+    <div class="table-wrapper">
+        <div class="page-header">
+            <h2>Reservation List</h2>
+            <a th:href="@{/reservations/new}" class="button">New Reservation</a>
+        </div>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Customer</th>
+                <th>Vehicle</th>
+                <th>Start</th>
+                <th>End</th>
+                <th>Total</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="reservation : ${reservations}">
+                <td th:text="${reservation.id}"></td>
+                <td th:text="${reservation.customer.firstName + ' ' + reservation.customer.lastName}"></td>
+                <td th:text="${reservation.vehicle.make + ' ' + reservation.vehicle.model}"></td>
+                <td th:text="${reservation.startDate}"></td>
+                <td th:text="${reservation.endDate}"></td>
+                <td th:text="${'$' + reservation.totalPrice}"></td>
+                <td th:text="${reservation.status}"></td>
+                <td>
+                    <a th:href="@{/payments/new/{id}(id=${reservation.id})}">Pay</a> |
+                    <a th:href="@{/reservations/delete/{id}(id=${reservation.id})}" class="delete-link">Delete</a>
+                </td>
+            </tr>
+            <tr th:if="${reservations.empty}">
+                <td colspan="8">No reservations found.</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

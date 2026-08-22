@@ -2,16 +2,18 @@
 <html xmlns:th="http://www.thymeleaf.org" th:fragment="layout">
 <head>
     <meta charset="UTF-8" />
-    <title th:replace="~{::title}">eRegistrar</title>
+    <title th:replace="~{::title}">RentaCar</title>
     <link rel="stylesheet" th:href="@{/css/styles.css}" />
 </head>
 <body>
 <nav>
-    <div class="nav-brand">eRegistrar</div>
+    <div class="nav-brand">RentaCar</div>
     <ul class="nav-menu">
         <li><a th:href="@{/home}">Home</a></li>
-        <li><a th:href="@{/students/list}">Students</a></li>
-        <li><a th:href="@{/students/new}">Register Student</a></li>
+        <li><a th:href="@{/customers/list}">Customers</a></li>
+        <li><a th:href="@{/vehicles/list}">Vehicles</a></li>
+        <li><a th:href="@{/reservations/list}">Reservations</a></li>
+        <li><a th:href="@{/payments/list}">Payments</a></li>
     </ul>
 </nav>
 <div class="container" th:insert="~{::body}"></div>

@@ -3,12 +3,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example</groupId>
-    <artifactId>eregistrar</artifactId>
+    <artifactId>rentacar</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>eregistrar</name>
-    <description>eRegistrar Spring Boot web application</description>
+    <name>rentacar</name>
+    <description>RentaCar Spring Boot web application</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -45,6 +45,11 @@
             <artifactId>spring-boot-devtools</artifactId>
             <scope>runtime</scope>
             <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 

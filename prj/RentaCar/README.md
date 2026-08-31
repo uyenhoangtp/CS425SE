@@ -163,3 +163,4 @@ This application is designed as a student-friendly, monolithic Spring Boot proje
 - Email notification for bookings
 - MySQL migration for production database
 - REST API support for frontend integration
+- Payment methods implementation full-completed.

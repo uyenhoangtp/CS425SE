@@ -45,7 +45,7 @@ RentaCar is a Spring Boot web application for managing a car rental business. It
 - Spring Web MVC
 - Thymeleaf
 - Spring Data JPA
-- H2 database (in-memory for development/testing)
+- MySQL 8
 - Maven
 - JUnit 5 + Mockito
 
@@ -95,24 +95,51 @@ prj/RentaCar/
 cd /Users/uyenhoang/Documents/MIU/SE/src/CS425SE/prj/RentaCar
 ```
 
-3. Set Java 21:
+3. Start MySQL locally (Docker):
 
 ```bash
-export JAVA_HOME=/usr/local/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home
+docker run --name rentacar-mysql \
+  -e MYSQL_DATABASE=rentacar \
+  -e MYSQL_ROOT_PASSWORD=root \
+  -p 3306:3306 \
+  -d mysql:8.0
+```
+
+4. Set Java 21:
+
+```bash
+export JAVA_HOME=/usr/local/Cellar/openjdk@21/21.0.11/libexec/openjdk.jdk/Contents/Home
 export PATH="$JAVA_HOME/bin:$PATH"
 ```
 
-4. Run the app:
+5. Run the app:
 
 ```bash
 mvn spring-boot:run
 ```
 
-5. Open the browser at:
+6. Open the browser at:
 
 ```text
 http://localhost:8080/
 ```
+
+### Database configuration
+The app uses MySQL with these default values:
+
+```properties
+spring.datasource.url=${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3306/rentacar?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC}
+spring.datasource.username=${SPRING_DATASOURCE_USERNAME:root}
+spring.datasource.password=${SPRING_DATASOURCE_PASSWORD:root}
+```
+
+You can connect to the same database with Beekeeper Studio using:
+
+- Host: `localhost`
+- Port: `3306`
+- Database: `rentacar`
+- Username: `root`
+- Password: `root`
 
 ## Test the Application
 
@@ -157,12 +184,14 @@ This application is a monolithic Spring Boot project designed to demonstrate a r
 
 The project was renamed from the earlier eRegistrar naming to the current `RentaCar` branding, and the legacy demo loader was updated to a relevant `DataSeeder` implementation.
 
+The application is configured for a full MySQL setup rather than an embedded database, and it is validated to run on Java 21.
+
 ## Future Enhancements
 
 - User authentication and role-based access
 - Search and filter for reservations
 - Reporting and analytics dashboard
 - Email notification for bookings
-- MySQL migration for production database
+- Deploy to cloud hosting with external MySQL
 - REST API support for frontend integration
-- Payment methods implementation full-completed.
+- Payment methods implementation fully completed.

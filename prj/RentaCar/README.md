@@ -35,7 +35,7 @@ RentaCar is a Spring Boot web application for managing a car rental business. It
 - Link payment directly to a reservation
 
 ### 6. Data Seeding
-- Sample data is loaded automatically on startup
+- Sample data is loaded automatically on startup through the `DataSeeder`
 - Pre-filled customers, vehicles, and reservation records help demonstrate the system quickly
 
 ## Tech Stack
@@ -58,19 +58,19 @@ prj/RentaCar/
 ├── screenshots/
 ├── src/
 │   ├── main/
-│   │   ├── java/com/example/eregistrar/
+│   │   ├── java/com/example/rentacar/
 │   │   │   ├── controller/
 │   │   │   ├── dto/
 │   │   │   ├── model/
 │   │   │   ├── repository/
 │   │   │   ├── service/
 │   │   │   ├── RentaCarApplication.java
-│   │   │   └── StudentDataLoader.java
+│   │   │   └── DataSeeder.java
 │   │   ├── resources/
 │   │   │   ├── static/css/styles.css
 │   │   │   ├── templates/
 │   │   │   └── application.properties
-│   └── test/java/com/example/eregistrar/
+│   └── test/java/com/example/rentacar/
 │       ├── controller/
 │       ├── repository/
 │       └── service/
@@ -153,7 +153,9 @@ When the application starts, it preloads sample records so the system is usable 
 
 ## Notes
 
-This application is designed as a student-friendly, monolithic Spring Boot project that demonstrates a realistic rental management workflow while staying simple enough to understand and extend.
+This application is a monolithic Spring Boot project designed to demonstrate a realistic car rental management workflow while staying simple enough to understand and extend.
+
+The project was renamed from the earlier eRegistrar naming to the current `RentaCar` branding, and the legacy demo loader was updated to a relevant `DataSeeder` implementation.
 
 ## Future Enhancements
 

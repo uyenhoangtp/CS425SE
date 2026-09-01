@@ -1,4 +1,4 @@
-/Users/uyenhoang/Documents/MIU/SE/src/CS425SE/prj/RentaCar/src/test/java/com/example/eregistrar/controller/CustomerControllerTest.java
-/Users/uyenhoang/Documents/MIU/SE/src/CS425SE/prj/RentaCar/src/test/java/com/example/eregistrar/service/ReservationServiceTest.java
-/Users/uyenhoang/Documents/MIU/SE/src/CS425SE/prj/RentaCar/src/test/java/com/example/eregistrar/service/CustomerServiceTest.java
-/Users/uyenhoang/Documents/MIU/SE/src/CS425SE/prj/RentaCar/src/test/java/com/example/eregistrar/repository/CustomerRepositoryTest.java
+/Users/uyenhoang/Documents/MIU/SE/src/CS425SE/prj/RentaCar/src/test/java/com/example/rentacar/service/CustomerServiceTest.java
+/Users/uyenhoang/Documents/MIU/SE/src/CS425SE/prj/RentaCar/src/test/java/com/example/rentacar/repository/CustomerRepositoryTest.java
+/Users/uyenhoang/Documents/MIU/SE/src/CS425SE/prj/RentaCar/src/test/java/com/example/rentacar/service/ReservationServiceTest.java
+/Users/uyenhoang/Documents/MIU/SE/src/CS425SE/prj/RentaCar/src/test/java/com/example/rentacar/controller/CustomerControllerTest.java

@@ -1,0 +1,29 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: rentacar-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: rentacar
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - rentacar-mysql-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+
+# Beekeeper Studio is typically run as a desktop app instead of a Docker container.
+# Use the app on your Mac and connect to:
+# Host: localhost
+# Port: 3306
+# Database: rentacar
+# Username: root
+# Password: root
+
+volumes:
+  rentacar-mysql-data:
